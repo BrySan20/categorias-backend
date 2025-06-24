@@ -1,6 +1,6 @@
 package mx.edu.uteq.idgs09.categorias.model.repository;
 
-import mx.edu.uteq.idgs09.eval2.model.entity.TipoRequisito;
+import mx.edu.uteq.idgs09.categorias.model.entity.TipoRequisito;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

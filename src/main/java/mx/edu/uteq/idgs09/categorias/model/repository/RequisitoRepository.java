@@ -1,6 +1,6 @@
 package mx.edu.uteq.idgs09.categorias.model.repository;
 
-import mx.edu.uteq.idgs09.eval2.model.entity.Requisito;
+import mx.edu.uteq.idgs09.categorias.model.entity.Requisito;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -16,7 +16,7 @@ public interface RequisitoRepository extends JpaRepository<Requisito, Integer> {
     List<Requisito> findByCategoriaId(@Param("categoriaId") int categoriaId);
 
     @Query("SELECT r FROM Requisito r WHERE r.tipoRequisito.id = :tipoRequisitoId")
-    List<Requisito> findTipoRequisitoId(@Param("tipoRequisitoId") int tipoRequisitoId);
+    List<Requisito> findByTipoRequisitoId(@Param("tipoRequisitoId") int tipoRequisitoId);
     
     @Query("SELECT r FROM Requisito r WHERE r.nombre LIKE %:nombre%")
     List<Requisito> findByNombreContaining(@Param("nombre") String nombre);

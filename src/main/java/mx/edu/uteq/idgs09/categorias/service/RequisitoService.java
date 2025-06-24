@@ -1,11 +1,11 @@
-package mx.edu.uteq.idgs09.eval2.service;
+package mx.edu.uteq.idgs09.categorias.service;
 
-import mx.edu.uteq.idgs09.eval2.model.entity.Requisito;
-import mx.edu.uteq.idgs09.eval2.model.entity.Categoria;
-import mx.edu.uteq.idgs09.eval2.model.entity.TipoRequisito;
-import mx.edu.uteq.idgs09.eval2.model.repository.RequisitoRepository;
-import mx.edu.uteq.idgs09.eval2.model.repository.CategoriaRepository;
-import mx.edu.uteq.idgs09.eval2.model.repository.TipoRequisitoRepository;
+import mx.edu.uteq.idgs09.categorias.model.entity.Requisito;
+import mx.edu.uteq.idgs09.categorias.model.entity.Categoria;
+import mx.edu.uteq.idgs09.categorias.model.entity.TipoRequisito;
+import mx.edu.uteq.idgs09.categorias.model.repository.RequisitoRepository;
+import mx.edu.uteq.idgs09.categorias.model.repository.CategoriaRepository;
+import mx.edu.uteq.idgs09.categorias.model.repository.TipoRequisitoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

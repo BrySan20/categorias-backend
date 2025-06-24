@@ -2,29 +2,35 @@ package mx.edu.uteq.idgs09.categorias.client;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestBody;
-import mx.edu.uteq.idgs09.eval2.service.CategoriaService;
-import mx.edu.uteq.idgs09.eval2.model.entity.Categoria;
+import mx.edu.uteq.idgs09.categorias.model.entity.Categoria;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("api/categorias")
+@FeignClient(name = "ms-catalogo-categorias", url = "localhost:8001")
+public interface CategoriaClientRest {
 
-public class CategoriaClientRest {
-    @Autowired
-    private CategoriaService categoriaService;
+    @GetMapping("/api/categoria")
+    ResponseEntity<List<Categoria>> buscarTodos(@RequestParam boolean soloActivos);
 
-    @GetMapping
-    public List<Categoria> obtenerCategorias() {
-        return categoriaService.listar();
-    }
+    @GetMapping("/api/categoria/{id}")
+    ResponseEntity<Categoria> buscarPorId(@PathVariable int id);
 
-    @PostMapping
-    public Categoria crearCategoria(@RequestBody Categoria categoria){
-        return categoriaService.guardar(categoria);
-    }
+    @PostMapping("/api/categoria")
+    ResponseEntity<Categoria> crear(@RequestBody Categoria categoria);
+
+    @PutMapping("/api/categoria/{id}")
+    ResponseEntity<Categoria> editar(@PathVariable int id, @RequestBody Categoria categoria);
+
+    @DeleteMapping("/api/categoria/{id}")
+    ResponseEntity<Void> eliminar(@PathVariable int id);
+
+    @GetMapping("/api/categoria/buscar-por-nombre")
+    ResponseEntity<List<Categoria>> buscarPorNombre(@RequestParam String nombre);
+
+    @GetMapping("/api/categoria/buscar-por-federal")
+    ResponseEntity<List<Categoria>> buscarPorNombreFederal(@RequestParam String nombreFederal);
+
+    @GetMapping("/api/categoria/buscar-por-estatal")
+    ResponseEntity<List<Categoria>> buscarPorNombreEstatal(@RequestParam String nombreEstatal);
 }
