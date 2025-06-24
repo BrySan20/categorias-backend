@@ -3,7 +3,6 @@ package mx.edu.uteq.idgs09.categorias.controller;
 import java.util.List;
 import java.util.Optional;
 
-import mx.edu.uteq.idgs09.categorias.model.dto.RequisitoDTO;
 import mx.edu.uteq.idgs09.categorias.service.RequisitoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import mx.edu.uteq.idgs09.categorias.model.entity.Requisito;
-import mx.edu.uteq.idgs09.categorias.model.entity.TipoRequisito;
 
 @RestController
 @RequestMapping("/api/requisito")
