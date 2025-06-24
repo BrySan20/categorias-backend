@@ -14,7 +14,7 @@ public class Requisito {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false)
     private String nombre;
     
     private boolean activo = true;
@@ -26,7 +26,7 @@ public class Requisito {
     private LocalDateTime fechaActualizacion = LocalDateTime.now();
 
     @ManyToOne
-    @JoinColumn(name = "tipo_requisito_id", nullable = false)
+    @JoinColumn(name = "tipo_requisito_id")
     @JsonIgnoreProperties(value = {"requisitos"})
     private TipoRequisito tipoRequisito;
 

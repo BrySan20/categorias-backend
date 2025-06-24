@@ -14,7 +14,7 @@ public class TipoRequisito {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false)
     private String nombre;
     
     private boolean activo = true;

@@ -14,16 +14,16 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private int id;
     
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false)
     private String nombre;
     
-    @Column(name = "nombre_categoria_anterior", length = 100)
+    @Column(name = "nombre_categoria_anterior")
     private String nombreCategoriaAnterior;
     
-    @Column(name = "nombre_categoria_federal", nullable = false, length = 100)
+    @Column(name = "nombre_categoria_federal")
     private String nombreCategoriaFederal;
     
-    @Column(name = "nombre_categoria_estatal", nullable = false, length = 100)
+    @Column(name = "nombre_categoria_estatal")
     private String nombreCategoriaEstatal;
     
     private boolean activo = true;
